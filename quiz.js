@@ -48,10 +48,17 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     setTimeout(() => {
-      resultTitle.textContent = `Exposition ${level}`;
-      resultText.textContent =
-        `${status}. Score indicatif : ${score}/8. Ceci n’est pas un avis juridique.`;
-      resultBox.scrollIntoView({ behavior: "smooth" });
-    }, 700);
+  resultTitle.textContent = `Exposition ${level}`;
+  resultText.textContent =
+    `${status}. Score indicatif : ${score}/8. Ceci n’est pas un avis juridique.`;
+
+  resultBox.scrollIntoView({ behavior: "smooth" });
+
+  const nextSteps = document.getElementById("next-steps");
+  if (nextSteps) {
+    nextSteps.style.display = "block";
+  }
+}, 700);
+
   });
 });
