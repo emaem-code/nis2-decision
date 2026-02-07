@@ -54,24 +54,45 @@
   <h2>Diagnostic NIS2</h2>
   <div class="card">
     <p>Répondez à quelques questions simples pour obtenir votre statut réglementaire.</p>
-    <form>
-      <label>Secteur d’activité</label>
-      <select>
-        <option>Industrie</option>
-        <option>Santé</option>
-        <option>IT / Services numériques</option>
-        <option>Autre</option>
-      </select>
+    <form id="nis2-quiz">
+  <label>Secteur d’activité</label>
+  <select name="sector" required>
+    <option value="industry">Industrie</option>
+    <option value="health">Santé</option>
+    <option value="it">IT / Services numériques</option>
+    <option value="other">Autre</option>
+  </select>
 
-      <label>Taille de l’entreprise</label>
-      <select>
-        <option>Moins de 50 salariés</option>
-        <option>50 à 250 salariés</option>
-        <option>Plus de 250 salariés</option>
-      </select>
+  <label>Taille de l’entreprise</label>
+  <select name="size" required>
+    <option value="lt50">Moins de 50 salariés</option>
+    <option value="50_250">50 à 250 salariés</option>
+    <option value="250plus">Plus de 250 salariés</option>
+  </select>
 
-      <button type="submit" class="btn primary full">Voir mon résultat</button>
-    </form>
+  <label>Rôle dans la supply chain</label>
+  <select name="supply" required>
+    <option value="standard">Standard</option>
+    <option value="supplier">Fournisseur critique (clients exigeants)</option>
+    <option value="critical">Opérateur essentiel pour clients/partenaires</option>
+  </select>
+
+  <label>Dépendance au numérique</label>
+  <select name="digital" required>
+    <option value="low">Faible</option>
+    <option value="medium">Moyenne</option>
+    <option value="high">Forte</option>
+  </select>
+
+  <button type="submit" class="btn primary full">Voir mon résultat</button>
+</form>
+
+<div id="quiz-result" class="card" style="display:none; margin-top:16px;">
+  <h3 id="result-title"></h3>
+  <p id="result-text" class="subtitle"></p>
+  <a class="btn primary full" href="#comparatif">Voir comment se mettre en conformité</a>
+</div>
+
   </div>
 </section>
 
