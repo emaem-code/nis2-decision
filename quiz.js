@@ -71,7 +71,7 @@ if (nextSteps) {
     // Faible : on masque le CTA conformité (optionnel mais recommandé)
     if (ctaComparatif) ctaComparatif.style.display = "none";
   }
-}
+},700,
 
 
   });
