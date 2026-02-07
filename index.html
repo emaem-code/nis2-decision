@@ -32,121 +32,166 @@
 
 <main class="container">
 
-<section class="section">
-  <h2>Les risques pour les dirigeants</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>💸 Amendes</h3>
-      <p>Jusqu’à <strong>10 M€</strong> ou <strong>2 % du chiffre d’affaires</strong> annuel.</p>
+  <!-- RISQUES -->
+  <section class="section" id="risques">
+    <h2>Les risques pour les dirigeants</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>💸 Amendes</h3>
+        <p>Jusqu’à <strong>10 M€</strong> ou <strong>2 % du chiffre d’affaires</strong> annuel.</p>
+      </div>
+      <div class="card">
+        <h3>⚖️ Responsabilité personnelle</h3>
+        <p>Injonctions, sanctions, suspension possible des dirigeants.</p>
+      </div>
+      <div class="card">
+        <h3>🔗 Perte de contrats</h3>
+        <p>Exclusion de la supply chain si non conforme.</p>
+      </div>
     </div>
+  </section>
+
+  <!-- DIAGNOSTIC -->
+  <section class="section" id="diagnostic">
+    <h2>Diagnostic NIS2</h2>
     <div class="card">
-      <h3>⚖️ Responsabilité personnelle</h3>
-      <p>Injonctions, sanctions, suspension possible des dirigeants.</p>
+      <p>Répondez à quelques questions simples pour obtenir votre statut réglementaire.</p>
+
+      <form id="nis2-quiz">
+        <label>Secteur d’activité</label>
+        <select name="sector" required>
+          <option value="industry">Industrie</option>
+          <option value="health">Santé</option>
+          <option value="it">IT / Services numériques</option>
+          <option value="other">Autre</option>
+        </select>
+
+        <label>Taille de l’entreprise</label>
+        <select name="size" required>
+          <option value="lt50">Moins de 50 salariés</option>
+          <option value="50_250">50 à 250 salariés</option>
+          <option value="250plus">Plus de 250 salariés</option>
+        </select>
+
+        <label>Rôle dans la supply chain</label>
+        <select name="supply" required>
+          <option value="standard">Standard</option>
+          <option value="supplier">Fournisseur critique (clients exigeants)</option>
+          <option value="critical">Opérateur essentiel pour clients/partenaires</option>
+        </select>
+
+        <label>Dépendance au numérique</label>
+        <select name="digital" required>
+          <option value="low">Faible</option>
+          <option value="medium">Moyenne</option>
+          <option value="high">Forte</option>
+        </select>
+
+        <button type="submit" class="btn primary full">Voir mon résultat</button>
+      </form>
+
+      <!-- RESULTAT -->
+      <div id="quiz-result" class="card" style="display:none; margin-top:16px;">
+        <h3 id="result-title"></h3>
+        <p id="result-text" class="subtitle"></p>
+        <a class="btn primary full" href="#comparatif">Voir comment se mettre en conformité</a>
+      </div>
     </div>
+  </section>
+
+  <!-- NEXT STEPS (DOIT ETRE DANS LE MAIN) -->
+  <section id="next-steps" class="section" style="display:none;">
+    <h2>Que devez-vous faire maintenant ?</h2>
+
     <div class="card">
-      <h3>🔗 Perte de contrats</h3>
-      <p>Exclusion de la supply chain si non conforme.</p>
+      <p class="subtitle">
+        En tant que dirigeant, NIS2 implique des mesures <strong>organisationnelles, techniques et documentaires</strong>.
+        L’inaction augmente le risque réglementaire et contractuel.
+      </p>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Option A — Audit manuel</h3>
+          <p>Audit long, coûteux, livrable ponctuel. Dépend fortement des ressources internes.</p>
+          <p><strong>Typiquement :</strong> 6–12 semaines</p>
+        </div>
+
+        <div class="card">
+          <h3>Option B — Automatisation</h3>
+          <p>Outils pour piloter les écarts, produire des preuves et suivre la conformité dans le temps.</p>
+          <p><strong>Typiquement :</strong> démarrage en quelques jours</p>
+          <a href="#solutions" class="btn primary full">Voir les solutions recommandées</a>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section class="section" id="diagnostic">
-  <h2>Diagnostic NIS2</h2>
-  <div class="card">
-    <p>Répondez à quelques questions simples pour obtenir votre statut réglementaire.</p>
-    <form id="nis2-quiz">
-  <label>Secteur d’activité</label>
-  <select name="sector" required>
-    <option value="industry">Industrie</option>
-    <option value="health">Santé</option>
-    <option value="it">IT / Services numériques</option>
-    <option value="other">Autre</option>
-  </select>
+  <!-- COMPARATIF (NECESSAIRE POUR LE BOUTON #comparatif) -->
+  <section class="section" id="comparatif">
+    <h2>Comment se mettre en conformité ?</h2>
 
-  <label>Taille de l’entreprise</label>
-  <select name="size" required>
-    <option value="lt50">Moins de 50 salariés</option>
-    <option value="50_250">50 à 250 salariés</option>
-    <option value="250plus">Plus de 250 salariés</option>
-  </select>
+    <div class="card">
+      <p class="subtitle">
+        Deux approches. Une décision simple : avancer lentement avec un audit ponctuel,
+        ou piloter la conformité en continu avec une solution d’automatisation.
+      </p>
 
-  <label>Rôle dans la supply chain</label>
-  <select name="supply" required>
-    <option value="standard">Standard</option>
-    <option value="supplier">Fournisseur critique (clients exigeants)</option>
-    <option value="critical">Opérateur essentiel pour clients/partenaires</option>
-  </select>
+      <div class="grid">
+        <div class="card">
+          <h3>Audit manuel</h3>
+          <p><strong>Lent</strong> • Beaucoup d’échanges • Dépend des consultants • Coût élevé</p>
+          <p><strong>Risque :</strong> preuves difficiles à maintenir à jour.</p>
+        </div>
 
-  <label>Dépendance au numérique</label>
-  <select name="digital" required>
-    <option value="low">Faible</option>
-    <option value="medium">Moyenne</option>
-    <option value="high">Forte</option>
-  </select>
+        <div class="card">
+          <h3>Automatisation</h3>
+          <p><strong>Rapide</strong> • Traçable • Pilotable DG/DAF • Évolutif</p>
+          <p><strong>Objectif :</strong> preuves et suivi continu.</p>
+          <a href="#solutions" class="btn primary full">Comparer les solutions</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <button type="submit" class="btn primary full">Voir mon résultat</button>
-</form>
+  <!-- SOLUTIONS (ZONE AFFILIATION) -->
+  <section class="section" id="solutions">
+    <h2>Solutions recommandées</h2>
+    <div class="card">
+      <p class="subtitle">
+        Cette section est l’espace de monétisation (affiliation). Remplace les liens ci-dessous par tes liens affiliés.
+      </p>
 
-<div id="quiz-result" class="card" style="display:none; margin-top:16px;">
-  <h3 id="result-title"></h3>
-  <p id="result-text" class="subtitle"></p>
-  <a class="btn primary full" href="#comparatif">Voir comment se mettre en conformité</a>
-</div>
+      <div class="grid">
+        <div class="card">
+          <h3>Vanta</h3>
+          <p>Automatisation conformité, preuves, suivi continu, reporting.</p>
+          <a class="btn ghost" href="#" target="_blank" rel="noopener">Découvrir Vanta</a>
+        </div>
 
-  </div>
-</section>
+        <div class="card">
+          <h3>Witik</h3>
+          <p>Gouvernance, sécurité, pilotage conformité adapté PME/ETI.</p>
+          <a class="btn ghost" href="#" target="_blank" rel="noopener">Découvrir Witik</a>
+        </div>
+
+        <div class="card">
+          <h3>Audit humain</h3>
+          <p>Quand un cadrage externe est nécessaire : gap analysis, plan d’actions, priorisation.</p>
+          <a class="btn ghost" href="#diagnostic">Refaire le diagnostic</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
 </main>
 
 <footer class="footer">
   <div class="container">
     <p>© NIS2 Decision — Service indépendant d’information réglementaire</p>
-    <p>Confidentialité • RGPD • Mentions légales</p>
+    <p>Confidentialité • RGPD • Mentions légales • Non affilié au gouvernement</p>
   </div>
 </footer>
 
-  <script src="quiz.js"></script>
-
-  <section id="next-steps" class="section" style="display:none;">
-  <h2>Que devez-vous faire maintenant ?</h2>
-
-  <div class="card">
-    <p class="subtitle">
-      En tant que dirigeant, la directive NIS2 vous impose des mesures
-      <strong>organisationnelles, techniques et documentaires</strong>.
-      L’inaction peut engager votre responsabilité personnelle.
-    </p>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Option 1 — Audit manuel</h3>
-        <p>
-          Cabinet de conseil, audit long (6–12 semaines), coûteux,
-          dépendant de la disponibilité des équipes.
-        </p>
-        <p><strong>Coût moyen :</strong> 8 000 € – 25 000 €</p>
-      </div>
-
-      <div class="card highlight">
-        <h3>Option 2 — Automatisation NIS2</h3>
-        <p>
-          Plateformes spécialisées permettant d’identifier les écarts,
-          documenter la conformité et piloter les risques en continu.
-        </p>
-        <p><strong>Avantages :</strong> rapide, traçable, scalable</p>
-
-        <a href="#" class="btn primary full">
-          Voir les solutions recommandées
-        </a>
-
-        <p class="trust">
-          Solutions utilisées par des PME et ETI européennes
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-
-  
+<script src="quiz.js"></script>
 </body>
 </html>
