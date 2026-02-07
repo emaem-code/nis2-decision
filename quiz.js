@@ -55,10 +55,24 @@ document.addEventListener("DOMContentLoaded", () => {
   resultBox.scrollIntoView({ behavior: "smooth" });
 
   const nextSteps = document.getElementById("next-steps");
-  if (nextSteps) {
+const ctaComparatif = document.querySelector('#quiz-result a[href="#comparatif"]');
+
+if (nextSteps) {
+  // Par défaut on cache
+  nextSteps.style.display = "none";
+
+  if (score >= 3) {
+    // Modérée / Élevée : on montre le bloc d’action
     nextSteps.style.display = "block";
+
+    // On laisse le bouton “Voir comment se mettre en conformité”
+    if (ctaComparatif) ctaComparatif.style.display = "inline-block";
+  } else {
+    // Faible : on masque le CTA conformité (optionnel mais recommandé)
+    if (ctaComparatif) ctaComparatif.style.display = "none";
   }
-}, 700);
+}
+
 
   });
 });
